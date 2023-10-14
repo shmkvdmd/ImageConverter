@@ -13,12 +13,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//Загрузка изображения на форму
+//Load image
 void MainWindow::on_loadImageBtn_clicked()
 {
     QString fileImage = QFileDialog::getOpenFileName(
                 this,
-                tr("Выберите изображение"),
+                tr("Choose image"),
                 "",
                 "Images(*.png *.jpg *.jpeg)"
                 );
@@ -29,7 +29,7 @@ void MainWindow::on_loadImageBtn_clicked()
     ui->graphicsView->fitInView(graphic->sceneRect(),Qt::KeepAspectRatio);
 }
 
-//Преобразование изображения в бинарный файл
+//Convert image to binary
 void MainWindow::on_toBinaryBtn_clicked()
 {
     if(!image.isNull())
@@ -45,18 +45,18 @@ void MainWindow::on_toBinaryBtn_clicked()
             stream << ba.toBase64();
             bin.close();
         }
-        QMessageBox::information(this," ","Успешно");
+        QMessageBox::information(this," ","Success");
     }
-    else QMessageBox::information(this," ","Ошибка");
+    else QMessageBox::information(this," ","Error");
 }
 
-//Преобразование бинарного файла в изображение
-//Сохранение нового изображения
+//Convert bin to image
+//Save new image
 void MainWindow::on_toImageBtn_clicked()
 {
     QString fileTxt = QFileDialog::getOpenFileName(
                 this,
-                tr("Выберите текстовый файл"),
+                tr("Choose txt file"),
                 "",
                 "Text file(*.txt)"
                 );
@@ -78,6 +78,6 @@ void MainWindow::on_toImageBtn_clicked()
         }
         bin.close();
     }
-    else QMessageBox::information(this," ","Ошибка");
+    else QMessageBox::information(this," ","Error");
 }
 

@@ -24,7 +24,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGraphicsView *graphicsView;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QPushButton *loadImageBtn;
@@ -46,20 +46,20 @@ public:
         graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         graphicsView->setRenderHints(QPainter::Antialiasing|QPainter::LosslessImageRendering|QPainter::NonCosmeticBrushPatterns|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing|QPainter::VerticalSubpixelPositioning);
         graphicsView->setOptimizationFlags(QGraphicsView::IndirectPainting);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(450, 20, 143, 88));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(450, 20, 143, 88));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
-        loadImageBtn = new QPushButton(widget);
+        loadImageBtn = new QPushButton(layoutWidget);
         loadImageBtn->setObjectName("loadImageBtn");
 
         verticalLayout->addWidget(loadImageBtn);
 
-        toBinaryBtn = new QPushButton(widget);
+        toBinaryBtn = new QPushButton(layoutWidget);
         toBinaryBtn->setObjectName("toBinaryBtn");
 
         verticalLayout->addWidget(toBinaryBtn);
@@ -67,7 +67,7 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        toImageBtn = new QPushButton(widget);
+        toImageBtn = new QPushButton(layoutWidget);
         toImageBtn->setObjectName("toImageBtn");
 
         verticalLayout_2->addWidget(toImageBtn);
@@ -82,9 +82,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "ImageConverter", nullptr));
-        loadImageBtn->setText(QCoreApplication::translate("MainWindow", "\320\227\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \320\270\320\267\320\276\320\261\321\200\320\260\320\266\320\265\320\275\320\270\320\265", nullptr));
-        toBinaryBtn->setText(QCoreApplication::translate("MainWindow", "\320\222 \320\264\320\262\320\276\320\270\321\207\320\275\321\213\320\271 \320\272\320\276\320\264", nullptr));
-        toImageBtn->setText(QCoreApplication::translate("MainWindow", "\320\222 \320\270\320\267\320\276\320\261\321\200\320\260\320\266\320\265\320\275\320\270\320\265", nullptr));
+        loadImageBtn->setText(QCoreApplication::translate("MainWindow", "Load image", nullptr));
+        toBinaryBtn->setText(QCoreApplication::translate("MainWindow", "To binary", nullptr));
+        toImageBtn->setText(QCoreApplication::translate("MainWindow", "To image", nullptr));
     } // retranslateUi
 
 };

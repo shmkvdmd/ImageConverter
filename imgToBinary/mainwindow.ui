@@ -45,7 +45,7 @@
      <set>QGraphicsView::IndirectPainting</set>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -60,14 +60,14 @@
        <item>
         <widget class="QPushButton" name="loadImageBtn">
          <property name="text">
-          <string>Load image</string>
+          <string>Загрузить изображение</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="toBinaryBtn">
          <property name="text">
-          <string>To binary</string>
+          <string>В двоичный код</string>
          </property>
         </widget>
        </item>
@@ -76,7 +76,7 @@
      <item>
       <widget class="QPushButton" name="toImageBtn">
        <property name="text">
-        <string>To image</string>
+        <string>В изображение</string>
        </property>
       </widget>
      </item>
